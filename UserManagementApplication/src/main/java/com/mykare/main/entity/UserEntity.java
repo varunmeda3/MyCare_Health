@@ -22,26 +22,4 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-public class UserEntity {
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@NotEmpty(message = "Name cannot be empty")
-	private String name;
-	
-	@Column(unique = true)
-	@NotEmpty(message = "Email cannot be empty")
-	private String email;
-	
-	@Enumerated(EnumType.STRING)
-	private Gender gender;
-	
-	@JsonProperty(access = Access.WRITE_ONLY)
-	private String password;
-	
-	private String role;
 
-}
